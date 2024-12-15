@@ -13,8 +13,11 @@ if(loginForm.email.value === '' || loginForm.elements.password.value === '') {
  [loginForm.elements.email.name]: loginForm.elements.email.value.trim(), 
  [loginForm.elements.password.name]: loginForm.elements.password.value.trim(),
 }
+if(loginForm.email.value  && loginForm.elements.password.value) {
   console.log(formData);
-
+}
+// console.log(formData);
+// }
 //чистка форми  
 loginForm.reset();
 });

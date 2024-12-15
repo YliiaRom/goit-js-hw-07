@@ -21,30 +21,6 @@ const btnDestroyDiv = document.querySelector('[data-destroy]');
 const containerBoxes = document.querySelector('#boxes');
 
 
-
-
-createEl.addEventListener('keydown', (element) => {
-
-  // inputCreateDiv.addEventListener('input', (element) => {
-     //значення вводу
-  //      const num = inputCreateDiv.value;
-  //     })
-
-  
-  //Після кліку на кнопку Create, якщо в input значення поза межами діапазону 1-100, нічого не відбувається
-
-  btnCreateDiv.addEventListener('click', (element) => {
-  if (inputCreateDiv.value > 0 && inputCreateDiv.value < 100) {
-    createBoxes(inputCreateDiv.value);
-  }
-    
-  })
-  btnDestroyDiv.addEventListener('click', (element) => {
-    destroyBoxes();
-  })
-
-
-
 function createBoxes(amount) {
   containerBoxes.innerHTML = "";
   let divArr = [];
@@ -67,11 +43,21 @@ containerBoxes.append(...divArr);
 inputCreateDiv.value = "";
 }
 
-//усі квадрати з div#boxes мають видалятися
+
+  //Після кліку на кнопку Create, якщо в input значення поза межами діапазону 1-100, нічого не відбувається
+
+  btnCreateDiv.addEventListener('click', (element) => {
+    if (inputCreateDiv.value > 0 && inputCreateDiv.value < 100) {
+      createBoxes(inputCreateDiv.value);
+    }
+      
+    })
+ 
+  //усі квадрати з div#boxes мають видалятися
 function destroyBoxes() {
   containerBoxes.innerHTML = "";
 }
-
+btnDestroyDiv.addEventListener('click', (element) => {
+  destroyBoxes();
 })
-
 
